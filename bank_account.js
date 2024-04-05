@@ -75,5 +75,8 @@ class SavingsAccount extends Account {
         this.currentBalance += (1 + this.interestRate / 100);
     }
 }
+//Successful test code for the SavingsAccount class and methods
+// const savingsAccount = new SavingsAccount('654321', 5000, 'Jane Smith', 2);
+// savingsAccount.addInterest();  // Adds interest to the balance based on the interestRate.
 
-
+// console.log(savingsAccount);

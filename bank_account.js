@@ -8,8 +8,11 @@
 
 // The SavingsAccount will also have an interestRate. Add a method addInterest that will increase the currentBalance by that interest rate.
 
-class Account (accountNumber, currentBalance, owner) {
+class Account {
+
+constructor(accountNumber, currentBalance, owner) {
 this.accountNumber = accountNumber;
 this.currentBalance = currentBalance;
 this.owner = owner;
+}
 }

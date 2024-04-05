@@ -29,10 +29,14 @@ withdraw(amount) {
   }
 
 }
+// Test code for the class and methods which was successful
+// const myAccount = new Account('12345678', 1000, 'John Doe');
+// console.log(myAccount);
 
+// myAccount.deposit(500);  
+// myAccount.withdraw(200); 
 
-
-
+// console.log(myAccount);
 
 
 

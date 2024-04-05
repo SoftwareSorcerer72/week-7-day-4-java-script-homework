@@ -10,21 +10,21 @@
 
 class Account {
 
-constructor(accountNumber, currentBalance, owner) {
-    this.accountNumber = accountNumber;
-    this.currentBalance = currentBalance;
-    this.owner = owner;
+    constructor(accountNumber, currentBalance, owner) {
+        this.accountNumber = accountNumber;
+        this.currentBalance = currentBalance;
+        this.owner = owner;
 }
 
 // deposit method should add that amount to the currentBalance
-deposit(amount) {                                 
-    this.currentBalance += amount;
+    deposit(amount) {                                 
+        this.currentBalance += amount;
 }
 
 // withdraw method should first check if there is enough to withdraw before withdrawing
-withdraw(amount) {
-    if (this.currentBalance >= amount) {
-        this.currentBalance -= amount
+    withdraw(amount) {
+        if (this.currentBalance >= amount) {
+            this.currentBalance -= amount
         }
     }
 
@@ -40,8 +40,7 @@ withdraw(amount) {
 
 
 // Implement child class CheckingAccount inheriting from the Account class.
-class CheckingAccount extends Account{
-
+class CheckingAccount extends Account {
     constructor(accountNumber, currentBalance, owner, overdraftLimit) {
         super(accountNumber, currentBalance, owner);
         this.overdraftLimit = overdraftLimit;
@@ -56,8 +55,25 @@ class CheckingAccount extends Account{
     }
 }
 
+
 // const checkingAccount = new CheckingAccount('12345678', 1000, 'John Doe', 500);
 // checkingAccount.withdraw(1400);  // Subtracts 1400 from the balance, even if there is not enough money, as long as overdraftLimit allows it.
 // checkingAccount.withdraw(100);   // Subtracts 200 from the balance if there is enough money or overdraftLimit allows it.
 
 // console.log(checkingAccount);
+
+
+// implement child class SavingsAccount inheriting from the Account class.
+class SavingsAccount extends Account {
+    constructor(accountNumber, currentBalance, owner, interestRate) {
+        super(accountNumber, currentBalance, owner);
+        this.interestRate = interestRate;
+    }
+
+    // Add a method addInterest that will increase the currentBalance by that interest rate
+    addInterest() {
+        this.currentBalance += (1 + this.interestRate / 100);
+    }
+}
+
+

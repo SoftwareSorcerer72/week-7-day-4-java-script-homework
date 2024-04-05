@@ -29,14 +29,6 @@ class Account {
     }
 
 }
-// Test code for the class and methods which was successful
-// const myAccount = new Account('12345678', 1000, 'John Doe');
-// console.log(myAccount);
-
-// myAccount.deposit(500);  
-// myAccount.withdraw(200); 
-
-// console.log(myAccount);
 
 
 // Implement child class CheckingAccount inheriting from the Account class.
@@ -45,7 +37,7 @@ class CheckingAccount extends Account {
         super(accountNumber, currentBalance, owner);
         this.overdraftLimit = overdraftLimit;
     }
-
+    
     // Override the withdraw method to first check if there is enough (+ overdraftLimit) before withdrawing.
     withdraw(amount) { 
         const overdraftBuffer = this.currentBalance + this.overdraftLimit;
@@ -56,11 +48,6 @@ class CheckingAccount extends Account {
 }
 
 
-// const checkingAccount = new CheckingAccount('12345678', 1000, 'John Doe', 500);
-// checkingAccount.withdraw(1400);  // Subtracts 1400 from the balance, even if there is not enough money, as long as overdraftLimit allows it.
-// checkingAccount.withdraw(100);   // Subtracts 200 from the balance if there is enough money or overdraftLimit allows it.
-
-// console.log(checkingAccount);
 
 
 // implement child class SavingsAccount inheriting from the Account class.
@@ -69,12 +56,39 @@ class SavingsAccount extends Account {
         super(accountNumber, currentBalance, owner);
         this.interestRate = interestRate;
     }
-
+    
     // Add a method addInterest that will increase the currentBalance by that interest rate
     addInterest() {
         this.currentBalance += (1 + this.interestRate / 100);
     }
 }
+
+
+
+
+// Test code for the class and methods which was successful
+// const myAccount = new Account('12345678', 1000, 'John Doe');
+// console.log(myAccount);
+
+// myAccount.deposit(500);  
+// myAccount.withdraw(200); 
+
+// console.log(myAccount);
+
+
+
+
+// Test code for the CheckingAccount class and methods which was successful
+// const checkingAccount = new CheckingAccount('12345678', 1000, 'John Doe', 500);
+// checkingAccount.withdraw(1400);  // Subtracts 1400 from the balance, even if there is not enough money, as long as overdraftLimit allows it.
+// checkingAccount.withdraw(100);   // Subtracts 200 from the balance if there is enough money or overdraftLimit allows it.
+
+// console.log(checkingAccount);
+
+
+
+
+
 //Successful test code for the SavingsAccount class and methods
 // const savingsAccount = new SavingsAccount('654321', 5000, 'Jane Smith', 2);
 // savingsAccount.addInterest();  // Adds interest to the balance based on the interestRate.

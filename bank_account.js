@@ -25,8 +25,8 @@ deposit(amount) {
 withdraw(amount) {
     if (this.currentBalance >= amount) {
         this.currentBalance -= amount
+        }
     }
-  }
 
 }
 // Test code for the class and methods which was successful
@@ -39,5 +39,25 @@ withdraw(amount) {
 // console.log(myAccount);
 
 
+// Implement child class CheckingAccount inheriting from the Account class.
+class CheckingAccount extends Account{
 
+    constructor(accountNumber, currentBalance, owner, overdraftLimit) {
+        super(accountNumber, currentBalance, owner);
+        this.overdraftLimit = overdraftLimit;
+    }
 
+    // Override the withdraw method to first check if there is enough (+ overdraftLimit) before withdrawing.
+    withdraw(amount) { 
+        const overdraftBuffer = this.currentBalance + this.overdraftLimit;
+        if (overdraftBuffer >= amount) {
+            this.currentBalance -= amount;
+        }
+    }
+}
+
+// const checkingAccount = new CheckingAccount('12345678', 1000, 'John Doe', 500);
+// checkingAccount.withdraw(1400);  // Subtracts 1400 from the balance, even if there is not enough money, as long as overdraftLimit allows it.
+// checkingAccount.withdraw(100);   // Subtracts 200 from the balance if there is enough money or overdraftLimit allows it.
+
+// console.log(checkingAccount);

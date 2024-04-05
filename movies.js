@@ -22,6 +22,8 @@ function getMovieInfo(movieName){
     })
 }
 
+
+// Create an async function that takes in a movie name and prints the movie info
 async function printMovieInfo(movieName){
     try {
         const movie = await getMovieInfo(movieName);
@@ -30,10 +32,11 @@ async function printMovieInfo(movieName){
             console.log(`Director: ${movie.director}`);
             console.log(`Runtime: ${movie.runtime} minutes`);
             console.log(`Description: ${movie.description}`);
-            
-} catch (error) {
+// If the movie name is too short, catch the error and log it to the console
+} catch (error) {   
     console.warn(error);
   }
 }
 
-
+printMovieInfo('Good vs Evil');
+printMovieInfo('Short'); 

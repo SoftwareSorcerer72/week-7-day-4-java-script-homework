@@ -11,8 +11,29 @@
 class Account {
 
 constructor(accountNumber, currentBalance, owner) {
-this.accountNumber = accountNumber;
-this.currentBalance = currentBalance;
-this.owner = owner;
+    this.accountNumber = accountNumber;
+    this.currentBalance = currentBalance;
+    this.owner = owner;
 }
+
+// deposit method should add that amount to the currentBalance
+deposit(amount) {                                 
+    this.currentBalance += amount;
 }
+
+// withdraw method should first check if there is enough to withdraw before withdrawing
+withdraw(amount) {
+    if (this.currentBalance >= amount) {
+        this.currentBalance -= amount
+    }
+  }
+
+}
+
+
+
+
+
+
+
+
